@@ -1,7 +1,7 @@
-17:01:54.612 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-17:01:54.722 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
-17:17:22.149 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - cukurrambutcom successfully activated FBKV (SurveyIdle(0)) wait: 144ms, init: 0ms
-17:17:22.270 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
-17:17:22.273 [NamespaceSystem-akka.actor.default-dispatcher-7] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: cukurrambutcom
-17:17:22.277 [NamespaceSystem-akka.actor.default-dispatcher-7] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for cukurrambutcom
-17:17:22.279 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
+17:19:03.073 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+17:19:03.168 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+17:20:13.343 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - cukurrambutcom successfully activated FBKV (SurveyIdle(0)) wait: 92ms, init: 0ms
+17:20:13.396 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+17:20:13.399 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: cukurrambutcom
+17:20:13.403 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for cukurrambutcom
+17:20:13.405 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
