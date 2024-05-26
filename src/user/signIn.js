@@ -30,14 +30,16 @@ exports.signIn = functions.https.onRequest(async (req, res) => {
 
     let userRef;
     let message;
+    let userData;
 
     if (!querySnapshot.empty) {
       // If email already exists, get the existing user's ID
       userRef = querySnapshot.docs[0].ref;
+      userData = querySnapshot.docs[0].data();
       message = 'Email already exists, returning existing user';
     } else {
       // Add new user data to Firestore
-      const userData = {
+      userData = {
         name: name,
         email: email,
         avatar: avatar,
@@ -45,13 +47,17 @@ exports.signIn = functions.https.onRequest(async (req, res) => {
       };
 
       userRef = await firestore.collection('users').add(userData);
+
+      // Update user data with the generated ID
+      const userId = userRef.id;
+      await userRef.update({ id: userId });
+
+      userData = { ...userData, id: userId };
       message = 'User added successfully';
     }
 
     // Generate a token for the user (for example purposes, using a simple string)
     const token = `token-${userRef.id}-${Date.now()}`;
-
-    const userData = await userRef.get();
 
     return res.status(201).json({
       code: 1,
@@ -59,9 +65,9 @@ exports.signIn = functions.https.onRequest(async (req, res) => {
       data: {
         id: userRef.id,
         token: token,
-        name: userData.data().name,
-        email: userData.data().email,
-        avatar: userData.data().avatar
+        name: userData.name,
+        email: userData.email,
+        avatar: userData.avatar
       }
     });
   } catch (error) {
