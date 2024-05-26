@@ -8,8 +8,12 @@ admin.initializeApp();
 // USER
 const userAPI  = require('./src/user');
 
+// BARBERSHOP
+const barbershopAPI  = require('./src/barbershop');
+
 module.exports = {
     ...userAPI,
+    ...barbershopAPI
 };
 
 
