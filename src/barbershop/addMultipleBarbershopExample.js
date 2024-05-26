@@ -44,7 +44,7 @@ exports.addMultipleBarbershopExample = functions.https.onRequest(async (req, res
             if (!description) missingFields.push(`barbershops[${index}].description`);
             if (!profilePicture) missingFields.push(`barbershops[${index}].profilePicture`);
             if (!pictures || !Array.isArray(pictures)) missingFields.push(`barbershops[${index}].pictures`);
-            if (!address || !address.province || !address.city || !address.kecamatan) missingFields.push(`barbershops[${index}].address`);
+            if (!address || !address.province || !address.city || !address.district) missingFields.push(`barbershops[${index}].address`);
             if (!schedule || typeof schedule !== 'object') missingFields.push(`barbershops[${index}].schedule`);
             if (!services || !Array.isArray(services)) {
                 missingFields.push(`barbershops[${index}].services`);

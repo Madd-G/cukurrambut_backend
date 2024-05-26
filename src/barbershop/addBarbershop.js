@@ -11,7 +11,7 @@ exports.addBarbershop = functions.https.onRequest(async (req, res) => {
         // Check required fields
         const missingFields = [];
         if (homeService === undefined) missingFields.push('homeService');
-        if (!address || !address.province || !address.city || !address.kecamatan) missingFields.push('address');
+        if (!address || !address.province || !address.city || !address.district) missingFields.push('address');
         if (!coordinates || !coordinates.latitude || !coordinates.longitude) missingFields.push('coordinates');
         if (!description) missingFields.push('description');
         if (!name) missingFields.push('name');

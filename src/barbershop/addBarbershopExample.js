@@ -30,7 +30,7 @@ exports.addBarbershopExample = functions.https.onRequest(async (req, res) => {
         if (!description) missingFields.push('description');
         if (!profilePicture) missingFields.push('profilePicture');
         if (!pictures || !Array.isArray(pictures)) missingFields.push('pictures');
-        if (!address || !address.province || !address.city || !address.kecamatan) missingFields.push('address');
+        if (!address || !address.province || !address.city || !address.district) missingFields.push('address');
         if (!schedule || typeof schedule !== 'object') missingFields.push('schedule');
         if (!services || !Array.isArray(services)) {
             missingFields.push('services');

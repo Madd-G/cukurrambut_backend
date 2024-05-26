@@ -8,10 +8,10 @@ exports.updateAddress = functions.https.onRequest(async (req, res) => {
       const { id, address } = req.body;
   
       // Check if ID and address are provided
-      if (!id || !address || !address.kecamatan || !address.city || !address.province) {
+      if (!id || !address || !address.district || !address.city || !address.province) {
         return res.status(400).json({
           code: 0,
-          message: 'ID, kecamatan, city/kabupaten, and province parameters must be provided',
+          message: 'ID, district, city/kabupaten, and province parameters must be provided',
           data: {}
         });
       }
