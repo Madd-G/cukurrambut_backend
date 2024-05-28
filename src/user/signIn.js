@@ -59,6 +59,9 @@ exports.signIn = functions.https.onRequest(async (req, res) => {
     // Generate a token for the user (for example purposes, using a simple string)
     const token = `token-${userRef.id}-${Date.now()}`;
 
+    // Check if the user has address data
+    const addressData = userData.address || {};
+
     return res.status(201).json({
       code: 1,
       message: message,
@@ -67,7 +70,9 @@ exports.signIn = functions.https.onRequest(async (req, res) => {
         token: token,
         name: userData.name,
         email: userData.email,
-        avatar: userData.avatar
+        avatar: userData.avatar,
+        openId: userData.openId,
+        address: addressData
       }
     });
   } catch (error) {
